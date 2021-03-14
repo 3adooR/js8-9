@@ -1,0 +1,26 @@
+<form>
+  <input #newWord type="text" class="form-control" placeholder="{{userLanguage.title}}">
+  <div>=</div>
+  <input #newTranslate type="text" class="form-control" placeholder="{{language.title}}">
+  <button type="button" class="btn btn-primary" (click)="addWord(newWord.value, newTranslate.value)">ADD</button>
+  <button type="button" class="btn btn-danger" (click)="clearDictionary()">CLEAR</button>
+</form>
+
+<div *ngIf="errorMessage" class="alert alert-danger" role="alert">{{errorMessage}}</div>
+<div class="words-container">
+  <ul *ngIf="words" class="words">
+    <li *ngFor="let word of words" [class.selected]="word === selectedWord" (click)="onSelect(word)">
+      {{word[userLanguage.name]}}
+    </li>
+  </ul>
+  <div *ngIf="selectedWord" class="word">
+    <div class="row">
+      <div class="col-md-6">{{userLanguage.title}}</div>
+      <div class="col-md-6"><b>{{selectedWord[userLanguage.name] | uppercase}}</b></div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">{{language.title}}</div>
+      <div class="col-md-6"><b>{{selectedWord[language.name] | uppercase}}</b></div>
+    </div>
+  </div>
+</div>

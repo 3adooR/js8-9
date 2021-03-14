@@ -1,0 +1,8 @@
+.row {
+  margin: 1em 0;
+}
+
+.col:first-child {
+  padding-top: 0.5em;
+  text-align: right;
+}

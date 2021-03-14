@@ -1,0 +1,58 @@
+<div class="container">
+  <div *ngIf="languagesList" class="row">
+    <div class="col">
+      <label for="userLanguage">Your language:</label>
+    </div>
+    <div class="col">
+      <select #userLanguageSelect
+              id="userLanguage"
+              class="form-control"
+              (change)="changeLanguage('userLanguage' , userLanguageSelect.value)">
+        <option *ngFor="let lang of languagesList" value="{{lang.name}}" [selected]="userLanguage.id==lang.id">
+          {{lang.title}}
+        </option>
+      </select>
+    </div>
+  </div>
+  <div *ngIf="languagesList" class="row">
+    <div class="col">
+      <label for="language">Learning language:</label>
+    </div>
+    <div class="col">
+      <select #languageSelect
+              id="language"
+              class="form-control"
+              (change)="changeLanguage('language', languageSelect.value)">
+        <option *ngFor="let lang of languagesList" value="{{lang.name}}" [selected]="language.id==lang.id">
+          {{lang.title}}
+        </option>
+      </select>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <label for="numberOfWordsInput">Number of words:</label>
+    </div>
+    <div class="col">
+      <input #numberOfWordsInput
+             id="numberOfWordsInput"
+             type="number"
+             class="form-control"
+             value="{{numberOfWords}}"
+             (change)="changeNumberOfWords(numberOfWordsInput.value)">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <label for="timeInput">Time to test (in seconds):</label>
+    </div>
+    <div class="col">
+      <input #timeInput
+             id="timeInput"
+             type="number"
+             class="form-control"
+             value="{{time}}"
+             (change)="changeTime(timeInput.value)">
+    </div>
+  </div>
+</div>

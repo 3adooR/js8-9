@@ -1,0 +1,60 @@
+form {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 1em;
+}
+
+form input {
+  max-width: 160px
+}
+
+form button, form div {
+  margin: 0 10px
+}
+
+form button:last-child {
+  margin: 0
+}
+
+.words-container {
+  display: flex;
+}
+
+.word, .words {
+  width: 50%;
+}
+
+.words {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.words li {
+  display: block;
+  cursor: pointer;
+  background-color: #EEE;
+  border-radius: 4px;
+  margin: 0.5em 0;
+  padding: 0.5em 1em;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.words li:hover {
+  background-color: #DD0031;
+  color: white;
+}
+
+.words li.selected, .words li.selected:hover {
+  background-color: #1976D2;
+  color: white;
+}
+
+.word .row {
+  background: #1976D2;
+  color: white;
+  padding: 0.5em 1em;
+  border-radius: 4px;
+  margin: 0.5em 1em;
+}

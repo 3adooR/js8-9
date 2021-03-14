@@ -1,0 +1,30 @@
+<div *ngIf="(curNumber >= maxNumber || timeOut)">
+  <h1>Results</h1>
+  <div class="alert alert-success text-center" role="alert">
+    <h2>{{ result * 100 / maxNumber }}%</h2>
+    <h3>{{ result }} / {{ maxNumber }}</h3>
+  </div>
+  <div *ngIf="timeOut" class="alert alert-danger text-center" role="alert">
+    Your time is up..
+  </div>
+</div>
+<div *ngIf="(curNumber < maxNumber && !timeOut)">
+  <div class="timer">
+    <b>{{timer$ | async}}</b>
+    seconds remain
+  </div>
+  <div class="progress">
+    <div class="progress-info">{{curNumber}} / {{maxNumber}}</div>
+    <div class="progress-bar bg-success" role="progressbar" style="width:{{curNumber * 100 / maxNumber}}%"></div>
+  </div>
+  <div class="word">
+    <span>Translate the word <b>&quot;{{words[curNumber][language]|uppercase}}&quot;</b></span>
+    <input #translate id="translateInput"
+           type="text"
+           class="form-control"
+           placeholder="Translate.."
+           (keyup.enter)="checkWord(words[curNumber]['id'], translate.value); translate.value= '';">
+    <div *ngIf="errorMessage" id="errorMessage" class="alert alert-danger" role="alert">{{errorMessage}}</div>
+    <div *ngIf="successMessage" id="successMessage" class="alert alert-success" role="alert">{{successMessage}}</div>
+  </div>
+</div>

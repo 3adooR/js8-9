@@ -1,0 +1,31 @@
+.word {
+  padding-top: 1em;
+  text-align: center;
+}
+
+.word input {
+  margin: 1em 0
+}
+
+.timer {
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+.timer b {
+  font-size: 3em;
+}
+
+.progress {
+  height: 2em;
+  width: 100%
+}
+
+.progress-info {
+  position: absolute;
+  width: 50%;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  padding-top: 0.2em;
+}
